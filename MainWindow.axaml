@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MyAvaloniaApp.MainWindow"
+        Title="Крестики-нолики"
+        SizeToContent="WidthAndHeight"
+        CanResize="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="GameStatusTextBlock" HorizontalAlignment="Center" Margin="10" Grid.Row="0"/>
+
+        <Grid Grid.Row="1" RowDefinitions="*,*,*" ColumnDefinitions="*,*,*">
+            <Button x:Name="Button0" Grid.Row="0" Grid.Column="0" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button1" Grid.Row="0" Grid.Column="1" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button2" Grid.Row="0" Grid.Column="2" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button3" Grid.Row="1" Grid.Column="0" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button4" Grid.Row="1" Grid.Column="1" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button5" Grid.Row="1" Grid.Column="2" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button6" Grid.Row="2" Grid.Column="0" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button7" Grid.Row="2" Grid.Column="1" Width="100" Height="100" Click="ButtonClick" />
+            <Button x:Name="Button8" Grid.Row="2" Grid.Column="2" Width="100" Height="100" Click="ButtonClick" />
+        </Grid>
+
+        <Border x:Name="winOverlay" Background="#7F000000" IsVisible="False" ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock x:Name="winTextBlock" Text="Победитель!" FontSize="24" Foreground="White" HorizontalAlignment="Center" Margin="10"/>
+                <Button Content="Начать заново"  Width="150" Margin="10"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
